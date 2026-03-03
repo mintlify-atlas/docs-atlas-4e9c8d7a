@@ -1,0 +1,115 @@
+{
+  "projectType": "saas",
+  "projectName": "Bukmarks",
+  "projectDescription": "A fast, cross-platform bookmark dashboard that imports Chromium bookmarks and provides a clean, searchable, minimal interface with semantic search capabilities.",
+  "theme": "almond",
+  "primaryColor": "#7c3aed",
+  "lightColor": "#a78bfa",
+  "darkColor": "#5b21b6",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "installation"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/import-bookmarks",
+              "features/semantic-search",
+              "features/organize-folders",
+              "features/browser-extension"
+            ]
+          },
+          {
+            "group": "User Guide",
+            "pages": [
+              "guides/managing-bookmarks",
+              "guides/search-tips",
+              "guides/keyboard-shortcuts",
+              "guides/export-data"
+            ]
+          },
+          {
+            "group": "Browser Extension",
+            "pages": [
+              "extension/overview",
+              "extension/installation",
+              "extension/usage"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Developer Guide",
+        "groups": [
+          {
+            "group": "Development",
+            "pages": [
+              "development/setup",
+              "development/architecture",
+              "development/tech-stack"
+            ]
+          },
+          {
+            "group": "API Reference",
+            "pages": [
+              "api/overview",
+              "api/bookmarks",
+              "api/folders",
+              "api/embeddings",
+              "api/import"
+            ]
+          },
+          {
+            "group": "Advanced",
+            "pages": [
+              "advanced/semantic-search-implementation",
+              "advanced/embedding-model",
+              "advanced/authentication"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Import bookmarks from Chromium-based browsers (Chrome, Edge, Brave, etc.)",
+    "Semantic search powered by AI embeddings (embeddinggemma-300m)",
+    "Organize bookmarks with folders and hierarchical structure",
+    "Browser extension for quick bookmark saving and import",
+    "Full-text search and filtering capabilities",
+    "Automatic metadata fetching (favicons, og:image, descriptions)",
+    "Drag-and-drop import interface",
+    "Keyboard-friendly navigation",
+    "Dark mode support",
+    "Privacy-focused with user data ownership"
+  ],
+  "publicApiSurface": [
+    "createBookmark(title, url, folderId?, favicon?, ogImage?, description?)",
+    "batchCreateBookmarks(bookmarks[])",
+    "getBookmarks()",
+    "updateBookmark(bookmarkId, ...fields)",
+    "deleteBookmark(bookmarkId)",
+    "createFolder(name, parentId?)",
+    "getFolders()",
+    "updateFolder(folderId, name?, parentId?)",
+    "deleteFolder(folderId)",
+    "upsertBookmarkEmbedding(bookmarkId, embedding, ...metadata)",
+    "deleteBookmarkEmbedding(bookmarkId)",
+    "getEmbeddingIndexStats()",
+    "repairEmbeddingIndexStats()",
+    "getUserStats()",
+    "deleteAllData()",
+    "/api/import - POST endpoint for batch importing bookmarks and folders",
+    "/api/metadata - GET endpoint for fetching URL metadata",
+    "parseBookmarkHtml(html) - Parse Netscape Bookmark HTML format"
+  ]
+}
